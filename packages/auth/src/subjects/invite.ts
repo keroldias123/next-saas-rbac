@@ -1,3 +1,4 @@
+// convite (convite)
 import { z } from 'zod'
 
 export const inviteSubject = z.tuple([

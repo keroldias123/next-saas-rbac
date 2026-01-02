@@ -1,3 +1,4 @@
+// usuário (usuário)
 import { z } from 'zod'
 
 import { roleSchema } from '../roles.ts'
