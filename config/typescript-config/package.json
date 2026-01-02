@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
-  "publishConfig": {
-    "access": "public"
+  "files": [
+    "library.json"
+  ],
+  "dependencies": {
+    "@tsconfig/vite-react": "^7.0.2"
   }
 }

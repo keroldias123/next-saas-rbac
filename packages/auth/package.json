@@ -1,0 +1,24 @@
+{
+    "name": "@saas/auth",
+    "version": "0.0.0",
+    "private": true,
+    "main": "src/index.ts",
+    "types": "src/index.ts",
+    "license": "MIT",
+    "devDependencies": {
+        "@saas/eslint-config": "workspace:*",
+        "@saas/prettier": "workspace:*",
+        "@saas/tsconfig": "workspace:*"
+    },
+    "eslintConfig": {
+        "extends": [
+            "@saas/eslint-config/library.js"
+        ]
+    },
+    "prettier": "@saas/prettier",
+    "dependencies": {
+        "@casl/ability": "^6.7.5",
+        "@tsconfig/vite-react": "^7.0.2",
+        "zod": "^4.3.4"
+    }
+}
