@@ -7,7 +7,7 @@ export const AccountProvider= pgEnum("account_provider", [
     "GITHUB",
 ])
 
-export const TableAccounts = pgTable( "accounts", {
+export const Accounts = pgTable( "accounts", {
     id: uuid("id").primaryKey().defaultRandom(),
 
     provider: AccountProvider().notNull(),
@@ -18,7 +18,8 @@ export const TableAccounts = pgTable( "accounts", {
       .references(() => users.id)
       .notNull(),
 
-    //token: text("token").notNull(),
+    //
+    token: text("token").notNull(),
 
     createdAt: timestamp("created_at").defaultNow(),
     updatedAt: timestamp("updated_at").$onUpdate(() => new Date()),

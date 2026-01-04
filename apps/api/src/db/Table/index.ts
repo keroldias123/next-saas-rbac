@@ -6,3 +6,4 @@ export * from './projects'
 export * from './tokens'
 export * from './accounts'
 
+export * from './roles'
