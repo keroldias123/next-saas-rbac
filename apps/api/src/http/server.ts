@@ -3,6 +3,7 @@ import {  serializerCompiler, validatorCompiler, type ZodTypeProvider,jsonSchema
 import fastifySwagger from "@fastify/swagger";
 import scalarAPIReference from "@scalar/fastify-api-reference";
 import fastifyCors from "@fastify/cors";
+import { createAccountRoute } from "./routes/auth/create-account";
 const Server = fastify({
   logger: {
     transport: {
@@ -40,7 +41,9 @@ Server.setValidatorCompiler(validatorCompiler);
 
 Server.register(fastifyCors,{
   origin: true,
-})
+});
+
+Server.register(createAccountRoute)
 
 Server.listen({port:3333,host: "0.0.0.0",}).then(() => {
   console.log(`Server running at http://localhost:3333`);
