@@ -1,5 +1,5 @@
 import { pgTable, uuid, text, timestamp, uniqueIndex, pgEnum, boolean } from "drizzle-orm/pg-core";
-import { TableUsers } from "./users";
+import { users } from "./users";
 
 export const TableOrganizations = pgTable("organizations", {
   id: uuid("id").primaryKey().defaultRandom(),
@@ -12,7 +12,7 @@ export const TableOrganizations = pgTable("organizations", {
 
   avatarUrl: text("avatar_url"),
 
-  ownerId: uuid("owner_id") .notNull() .references(() => TableUsers.id),
+  ownerId: uuid("owner_id") .notNull() .references(() => users.id),
 
   createdAt: timestamp("created_at").defaultNow(),
   updatedAt: timestamp("updated_at").$onUpdate(() => new Date()),

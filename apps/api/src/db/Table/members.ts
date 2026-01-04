@@ -1,6 +1,6 @@
 import { pgTable, uuid, text, timestamp, uniqueIndex, pgEnum } from "drizzle-orm/pg-core";
 import { TableOrganizations } from "./organizations";
-import { TableUsers } from "./users";
+import { users } from "./users";
 import { Role } from "./roles";
 
 export const Members = pgTable(
@@ -16,7 +16,7 @@ export const Members = pgTable(
 
     userId: uuid("user_id")
       .notNull()
-      .references(() => TableUsers.id, { onDelete: "cascade" }),
+      .references(() => users.id, { onDelete: "cascade" }),
   },
   (table) => [
     uniqueIndex("members_org_user_idx").on(

@@ -2,8 +2,9 @@ import { index } from "drizzle-orm/pg-core";
 import { pgTable, uuid, text, timestamp, uniqueIndex, pgEnum } from "drizzle-orm/pg-core";
 import {  users } from "./users";
 import { TableOrganizations } from "./organizations";
+import { Role } from "./roles";
 
-export const Role = pgEnum("role", ["student", "manager"])
+
 export const Invites = pgTable(
   "invites",
   {

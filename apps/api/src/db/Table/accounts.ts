@@ -1,5 +1,5 @@
 import { pgEnum, pgTable, uuid, text, timestamp } from "drizzle-orm/pg-core";
-import { TableUsers } from "./users";
+import { users } from "./users";
 import { uniqueIndex } from "drizzle-orm/pg-core";
 import { index } from "drizzle-orm/pg-core";
 
@@ -15,10 +15,10 @@ export const TableAccounts = pgTable( "accounts", {
     provideraccountid: text("provider_account_id").notNull(),
 
     userid: uuid("user_id")
-      .references(() => TableUsers.id)
+      .references(() => users.id)
       .notNull(),
 
-    token: text("token").notNull(),
+    //token: text("token").notNull(),
 
     createdAt: timestamp("created_at").defaultNow(),
     updatedAt: timestamp("updated_at").$onUpdate(() => new Date()),
